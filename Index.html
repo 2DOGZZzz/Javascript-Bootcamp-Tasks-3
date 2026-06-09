@@ -1,1 +1,174 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+  :root {
+      --ErrorColor: #ff3838;
+      --SuccessColor: #2ed573;
+      --InputBorder: #ccc;
+      --FontFamily: system-ui, -android-system, sans-serif;
+  }
+  
+  body {
+      font-family: var(--FontFamily);
+      background-color: #f7f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+  }
+  
+  .formWrapper{
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+  }
+  
+  .GroupForm {
+      margin-bottom: 20px;
+  }
+  
+  .GroupForm.checkbox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  }
+  
+  label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+  }
+  
+  .GroupForm.checkbox label {
+      display: inline;
+      margin-bottom: 0;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--InputBorder);
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+  }
+  
+  input:focus {
+      outline: none;
+      border-color: #007bff;
+  }
+  
+.ErrorMessage {
+      color: var(--ErrorColor);
+      font-size: 0.8rem;
+      display: block;
+      margin-top: 4px;
+      min-height: 1.2em;
+  }
+  
+  button {
+      width: 100%;
+      padding: 30px;
+      border: none;
+      border-radius: 15px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: px;
+      transition: background-color 0.2s;
+  }
+  
+  .SubmitBtn {
+      background-color: #007bff;
+      color: white;
+  }
+  
+  .SubmitBtn:hover {
+      background-color: #0056b3;
+  }
+  
+  .ResendBtn {
+      background-color: #6c757d;
+      color: white;
+  }
+  
+  .ResendBtn:hover:not(:disabled) {
+      background-color: #5a6268;
+  }
+  
+  .ResendBtn:disabled {
+      background-color: #e9ecef;
+      color: #6c757d;
+      cursor: not-allowed;
+      border: 1px solid #ced4da;
+  }
+  
+</style>
+    <title>Signup Portal</title>
+    
+    </head>
+<body>
+
+<div class="formWrapper">
+    <form id="RegstrForm" novalidate>
+        
+        
+        <div class="GroupForm">
+            <label for="Username">Username</label>
+            <input type="text" id="Username" name="Username" placeholder="Enter Username">
+            <span id="UsernameError" class="ErrorMessage" role="alert"></span>
+        </div>
+
+        
+        <div class="GroupForm">
+            <label for="Email">Email</label>
+            <input type="email" id="Email" name="Email" placeholder="Enter Email address">
+            <span id="EmailError" class="ErrorMessage" role="alert"></span>
+        </div>
+
+        
+        <div class="GroupForm">
+            <label for= "Password">Password</label>
+            <input type="password" id="Password" name="Password" placeholder="Enter Password">
+            <span id="PasswordError" class="ErrorMessage" role="alert"></span>
+        </div>
+
+    
+        <div class="GroupForm">
+            <div class="CheckboxGroup">
+                <input type="checkbox" id="TermsChecked" name="TermsChecked">
+                <label for="Terms"> Do you agree to the Terms and Conditions ?</label>
+            </div>
+            <span id="TermsError" class="ErrorMessage" role="alert"></span>
+        </div>
+
+        
+        <button type="submit" class= "SubmitBtn">Sign up</button>
+        <div>
+        <button type="button" id="ResendBtn" class="ResendBtn" disabled>Resend Verification (10s)</button>
+    
+        </div>
+        
+        <!---<div id = "synchronous" class="output">The function is starting</div>
+        <div id = "Asynchronous" class="output">The process is in action</div>-->
+    </form>
+</div>
+<script src = "script.js" defer></script>
+
+</body>
+</html>
