@@ -22,12 +22,12 @@ form.addEventListener('submit', function(event) {
 
     // Validation of inputs
     if (!UsernameInput) {
-        setError(document.getElementById('Username'), UsernameError, "Username is required.");
+        setError(document.getElementById('Username'), UsernameError, "Username Field Is Required.");
         Validation = false;
     }
 
     if (!EmailInput) {
-        setError(document.getElementById('Email'), EmailError, "Email is required.");
+        setError(document.getElementById('Email'), EmailError, "Email Field Is Required.");
         Validation = false;
     } else if (!/\S+@\S+\.\S+/.test(EmailInput)) {
         setError(document.getElementById('Email'), EmailError, "Please enter a valid email address.");
@@ -35,7 +35,7 @@ form.addEventListener('submit', function(event) {
     }
 
     if (!PasswordInput) {
-        setError(document.getElementById('Password'), PasswordError, "Password is required.");
+        setError(document.getElementById('Password'), PasswordError, "Password Fiel Is Required.")
         Validation = false;
     } else if (PasswordInput.length < 8) {
         setError(document.getElementById('Password'), PasswordError, "Password must be at least 8 characters.");
